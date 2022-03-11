@@ -1,13 +1,18 @@
 package main
-
 import (
+    "encoding/json"
     "fmt"
+    "io/ioutil"
     "os"
     "encoding/csv"
     "html/template"
     "log"
     "net/http"
 )
+
+type Color struct {
+    BtnColor string
+}
 
 var tpl = template.Must(template.ParseFiles("index.html"))
 
@@ -34,6 +39,23 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 func writeIdData(w http.ResponseWriter, r *http.Request) {
     fmt.Println("test")
+    b, err := ioutil.ReadAll(r.Body)
+    if err != nil {
+        log.Fatalln(err)
+    }
+    var color Color
+    json.Unmarshal(b, &color)
+    fmt.Println(string(b))
+    fmt.Println(color)
+    fmt.Println(color)
+    resp:=make(map[string]string)
+    resp["message"] = "Success"
+    jsonResp, err := json.Marshal(resp)
+    if err != nil {
+        log.Fatalf("Error %s", err)
+    }
+    w.Write(jsonResp)
+    return
 }
 
 func main() {
