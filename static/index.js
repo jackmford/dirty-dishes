@@ -29,3 +29,7 @@ function changeColor() {
   });
 }
 
+function addItem() {
+  document.getElementById("grocery_list");
+  console.log('test')
+}
