@@ -1,22 +1,14 @@
-function changeColor(value) {
+function changeDishesColor() {
   let btncolor = "";
-  if (value == "dirty_dishes"){
+  if (document.getElementById("dirty_dishes") != null ) {
     document.getElementById("dirty_dishes").innerHTML = "Clean";
     document.getElementById("dirty_dishes").id = "clean_dishes";
     btncolor = "clean_dishes";
   }
-  else if (value == "clean_dishes") {
+  else {
     document.getElementById("clean_dishes").innerHTML = "Dirty";
     document.getElementById("clean_dishes").id = "dirty_dishes";
     btncolor = "dirty_dishes";
-  }
-  else if (value == "running") {
-    document.getElementById("not_running").innerHTML = "Running";
-    document.getElementById("not_running").id = "running";
-  }
-  else {
-    document.getElementById("running").innerHTML = "Not running";
-    document.getElementById("running").id = "not_running";
   }
   var data = new FormData();
   data.append("color", btncolor);
@@ -35,6 +27,17 @@ function changeColor(value) {
   .catch((error) => {
     console.error("error");
   });
+}
+
+function changeRunColor() {
+  if (document.getElementById("not_running") != null) {
+    document.getElementById("not_running").innerHTML = "Running";
+    document.getElementById("not_running").id = "running";
+  }
+  else {
+    document.getElementById("running").innerHTML = "Not running";
+    document.getElementById("running").id = "not_running";
+  }
 }
 
 function addItem() {
