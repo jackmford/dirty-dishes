@@ -29,10 +29,12 @@ func hello(w http.ResponseWriter, r *http.Request) {
     fmt.Println(records[0][0])
     data := struct {
         Id string
-        Text string
+        Dishes_Text string
+        Run_Text string
     }{
         Id: records[0][0],
-        Text: records[1][0],
+        Dishes_Text: records[1][0],
+        Run_Text: records[2][0],
     }
     tpl.Execute(w, data)
 }
