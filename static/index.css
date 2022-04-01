@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-#bluebutton {
+#clean_dishes, #not_running {
   background-color: white;
   border: 2px solid #0099ff;
   border-radius: 12px;
@@ -15,17 +15,17 @@
   font-size: 20px;
 }
 
-#bluebutton:hover {
+#clean_dishes:hover, #not_running:hover {
   background-color: #66c2ff;
   color: white;
 }
 
-#bluebutton:active {
+#clean_dishes:active, #not_running:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-#redbutton {
+#dirty_dishes {
   background-color: white;
   border: 2px solid #ff0000;
   border-radius: 12px;
@@ -33,12 +33,12 @@
   font-size: 20px;
 }
 
-#redbutton:hover {
+#dirty_dishes:hover {
   background-color: #ff6666;
   color: white;
 }
 
-#redbutton:active {
+#dirty_dishes:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

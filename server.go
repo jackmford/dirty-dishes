@@ -28,13 +28,15 @@ func hello(w http.ResponseWriter, r *http.Request) {
     records, _ := reader.ReadAll()
     fmt.Println(records[0][0])
     data := struct {
-        Id string
+        Dishes_Id string
+        Run_Id string
         Dishes_Text string
         Run_Text string
     }{
-        Id: records[0][0],
-        Dishes_Text: records[1][0],
-        Run_Text: records[2][0],
+        Dishes_Id: records[0][0],
+        Run_Id: records[1][0],
+        Dishes_Text: records[2][0],
+        Run_Text: records[3][0],
     }
     tpl.Execute(w, data)
 }

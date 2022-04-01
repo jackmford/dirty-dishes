@@ -1,3 +1,4 @@
-bluebutton
+clean_dishes
+not_running
 Clean
 No

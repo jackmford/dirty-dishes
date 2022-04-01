@@ -9,9 +9,9 @@
   <body>
     <div class="center">
       <h1>Dirty Dishes?</h1>
-      <button onclick="changeColor()" type="button" id={{ .Id }}>{{ .Dishes_Text }}</button>
+      <button onclick="changeColor({{ .Dishes_Id }})" type="button" id={{ .Dishes_Id }}>{{ .Dishes_Text }}</button>
       <h1>Is Jack On a Run?</h1>
-      <button onclick="changeColor()" type="button" id={{ .Id }}>{{ .Run_Text }}</button>
+      <button onclick="changeColor({{ .Run_Id }})" type="button" id={{ .Run_Id }}>{{ .Run_Text }}</button>
       <h1>Grocery List:</h1>
       <ul id="grocery_list">
         <li>Test</li>
