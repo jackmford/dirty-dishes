@@ -42,6 +42,8 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func writeIdData(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "*")
     fmt.Println("test")
     b, err := ioutil.ReadAll(r.Body)
     if err != nil {

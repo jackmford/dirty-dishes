@@ -18,7 +18,7 @@ function changeDishesColor() {
       "Content-Type": "application/json"
     },
     //body: JSON.stringify(data)
-    body: {"color": btncolor}
+    body: {"color": btncolor},
   })
   .then(response => response.json())
   .then(data => {
